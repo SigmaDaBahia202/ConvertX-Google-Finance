@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ConvertX — conversor de moedas e criptomoedas">
+<title>ConvertX — Conversor de Moedas</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><a class="brand" href="./"><span class="logo">↔</span>Convert<span>X</span></a><div class="status"><i></i> Cotações online</div></header>
+<main>
+<section class="hero"><div class="pill">CONVERSOR UNIVERSAL</div><h1>Converta valores<br><span>em segundos.</span></h1><p>Moedas tradicionais e criptomoedas em uma interface simples e moderna.</p></section>
+<section class="converter">
+<div class="top"><div><h2>Conversor</h2><small id="source">Escolha as moedas e informe o valor</small></div><button id="refresh">↻</button></div>
+<div class="grid">
+<div class="box"><label>VOCÊ ENVIA</label><div class="select"><span id="fromIcon">🇧🇷</span><select id="from"></select></div><input id="amount" type="number" value="100" min="0" step="any"></div>
+<button id="swap" class="swap">⇄</button>
+<div class="box"><label>VOCÊ RECEBE</label><div class="select"><span id="toIcon">🇺🇸</span><select id="to"></select></div><input id="result" readonly placeholder="0,00"></div>
+</div>
+<button id="convert" class="convert">Converter agora <b>→</b></button>
+<div class="quote"><strong id="quote">1 BRL = — USD</strong><span id="updated">Aguardando</span></div><div id="error"></div>
+</section>
+<section class="popular"><div class="section-title"><small>ATALHOS</small><h2>Conversões populares</h2></div><div class="cards" id="cards"></div></section>
+<section class="info"><article><b>⚡</b><h3>Rápido</h3><p>Atualiza sem recarregar a página.</p></article><article><b>🌐</b><h3>Multimoedas</h3><p>Moedas e principais criptoativos.</p></article><article><b>📱</b><h3>Responsivo</h3><p>Funciona no computador e celular.</p></article></section>
+</main><footer>ConvertX • Projeto de conversão de moedas</footer><script src="app.js"></script>
+</body></html>
