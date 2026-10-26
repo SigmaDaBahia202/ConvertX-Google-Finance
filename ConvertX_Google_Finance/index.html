@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ConvertX — Google Rates</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><a class="brand"><b>↔</b> Convert<span>X</span></a><span class="live"><i></i> Cotações Google</span></header>
+<main>
+<section class="hero"><div class="pill">GOOGLE RATES</div><h1>Converta valores<br><span>com facilidade.</span></h1><p>Conversor de moedas com taxas obtidas pelo Google Finance através do Google Sheets.</p></section>
+<section class="converter">
+<div class="heading"><div><strong>Conversor</strong><small>Taxa de câmbio de referência</small></div><button id="refresh">↻</button></div>
+<div class="grid">
+<div class="box"><label>VOCÊ ENVIA</label><div class="select"><span id="fi">🇧🇷</span><select id="from"></select></div><input id="amount" type="number" value="100" min="0" step="any"></div>
+<button id="swap" class="swap">⇄</button>
+<div class="box"><label>VOCÊ RECEBE</label><div class="select"><span id="ti">🇺🇸</span><select id="to"></select></div><input id="result" readonly placeholder="0,00"></div>
+</div>
+<button id="convert" class="convert">Converter agora <b>→</b></button>
+<div class="quote"><strong id="quote">1 BRL = — USD</strong><span id="updated">Pronto para consultar</span></div>
+<div id="error"></div>
+</section>
+<section class="note"><b>Como a cotação funciona</b><p>As moedas tradicionais são consultadas pelo endpoint do seu Google Apps Script, que usa a função <code>GOOGLEFINANCE()</code>. O Google informa que cotações podem ter atraso de até 20 minutos. citeturn0search2</p></section>
+</main>
+<footer>ConvertX • Google Finance + Google Apps Script</footer>
+<script src="app.js"></script>
+</body></html>
