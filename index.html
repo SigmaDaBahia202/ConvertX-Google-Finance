@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ConvertX — conversor de moedas, criptomoedas, cotações e horários globais">
+  <meta name="theme-color" content="#0b1220"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>ConvertX — Câmbio & Mercados</title>
+  <link rel="preconnect" href="https://api.frankfurter.dev">
+  <link rel="preconnect" href="https://api.coingecko.com">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="ConvertX">
+      <span class="logo">CX</span>
+      <span>Convert<span>X</span></span>
+    </a>
+    <nav>
+      <a href="#conversor">Conversor</a>
+      <a href="#cotacoes">Cotações</a>
+      <a href="#horarios">Horários</a>
+    </nav>
+    <div class="live"><i></i> Mercado online</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">CÂMBIO EM UM SÓ LUGAR</span>
+        <h1>Converta, acompanhe<br><em>e compare.</em></h1>
+        <p>Uma central moderna para consultar moedas, criptoativos, cotações importantes e os principais horários financeiros do mundo.</p>
+        <div class="hero-pills">
+          <span>● Dados online</span><span>⚡ Atualização rápida</span><span>◈ Multimoedas</span>
+        </div>
+      </div>
+      <div class="hero-orb"><div class="orb-ring"></div><div class="orb-center">FX</div></div>
+    </section>
+
+    <section id="conversor" class="converter panel">
+      <div class="section-head">
+        <div><span class="eyebrow">01 / CONVERSOR</span><h2>Faça sua conversão</h2><p id="source">Escolha as moedas e informe o valor</p></div>
+        <button id="refresh" class="icon-button" type="button" aria-label="Atualizar cotação" title="Atualizar cotação">↻</button>
+      </div>
+
+      <div class="grid">
+        <div class="box">
+          <label for="from">VOCÊ ENVIA</label>
+          <div class="select"><span id="fromIcon">🇧🇷</span><select id="from" aria-label="Moeda de origem"></select></div>
+          <input id="amount" type="number" value="100" min="0" step="any" inputmode="decimal" aria-label="Valor a converter">
+        </div>
+        <button id="swap" class="swap" type="button" aria-label="Trocar moedas" title="Trocar moedas">⇄</button>
+        <div class="box">
+          <label for="result">VOCÊ RECEBE</label>
+          <div class="select"><span id="toIcon">🇺🇸</span><select id="to" aria-label="Moeda de destino"></select></div>
+          <input id="result" readonly placeholder="0,00" aria-label="Resultado da conversão">
+        </div>
+      </div>
+
+      <button id="convert" class="convert" type="button"><span>Converter agora</span><b>→</b></button>
+      <div class="quote"><strong id="quote">1 BRL = — USD</strong><span id="updated">Aguardando cotação</span></div>
+      <div id="error" role="alert" aria-live="polite"></div>
+    </section>
+
+    <section id="cotacoes" class="markets">
+      <div class="section-head">
+        <div><span class="eyebrow">02 / MERCADOS</span><h2>Cotações importantes</h2><p>Referências nacionais e internacionais em destaque.</p></div>
+        <span class="market-badge"><i></i> AO VIVO</span>
+      </div>
+      <div class="market-grid" id="marketGrid">
+        <article class="market-card loading"><span>BRL / USD</span><strong>Consultando…</strong><small>Dólar comercial</small></article>
+        <article class="market-card loading"><span>BRL / EUR</span><strong>Consultando…</strong><small>Euro</small></article>
+        <article class="market-card loading"><span>BRL / GBP</span><strong>Consultando…</strong><small>Libra</small></article>
+        <article class="market-card loading"><span>BRL / JPY</span><strong>Consultando…</strong><small>Iene</small></article>
+        <article class="market-card loading"><span>EUR / USD</span><strong>Consultando…</strong><small>Euro x Dólar</small></article>
+        <article class="market-card loading"><span>USD / JPY</span><strong>Consultando…</strong><small>Dólar x Iene</small></article>
+      </div>
+    </section>
+
+    <section id="horarios" class="world-clocks panel">
+      <div class="section-head">
+        <div><span class="eyebrow">03 / MUNDO</span><h2>Horários importantes</h2><p>Acompanhe os principais centros financeiros do mundo.</p></div>
+        <span class="clock-date" id="clockDate">—</span>
+      </div>
+      <div class="clock-grid" id="clockGrid"></div>
+    </section>
+
+    <section class="popular">
+      <div class="section-head simple"><div><span class="eyebrow">04 / ATALHOS</span><h2>Conversões populares</h2></div></div>
+      <div class="cards" id="cards"></div>
+    </section>
+  </main>
+
+  <footer><strong>ConvertX</strong><span>•</span> Câmbio & Mercados <span>•</span> Interface estática compatível com GitHub Pages</footer>
+  <script src="app.js"></script>
+</body>
+</html>
